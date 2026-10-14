@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoApp Pro - Separación de Residuos y Energías Renovables</title>
+  <link rel="stylesheet" href="stylos.css">
+</head>
+<body>
+
+  <!-- Pantalla de Login -->
+  <div id="login-screen" class="screen active">
+    <div class="login-card">
+      <div class="app-logo">🌱</div>
+      <h2>EcoApp Escolar Pro</h2>
+      <p>Plataforma Digital de Investigación & Evaluación Ambiental</p>
+      
+      <form id="login-form">
+        <div class="input-group">
+          <label for="student-name">Nombre(s)</label>
+          <input type="text" id="student-name" required>
+        </div>
+
+        <div class="input-group">
+          <label for="student-ap-paterno">Apellido Paterno</label>
+          <input type="text" id="student-ap-paterno" required>
+        </div>
+
+        <div class="input-group">
+          <label for="student-ap-materno">Apellido Materno</label>
+          <input type="text" id="student-ap-materno" required>
+        </div>
+        
+        <div class="input-group">
+          <label for="student-group">Grado y Grupo</label>
+          <input type="text" id="student-group" required>
+        </div>
+        
+        <div class="input-group">
+          <label for="student-date">Fecha</label>
+          <input type="date" id="student-date" required>
+        </div>
+        
+        <button type="submit" class="btn-primary">Ingresar a la Plataforma</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- App Principal -->
+  <div id="main-app" class="screen">
+    <!-- Header tipo Red Social -->
+   <header class="app-header">
+      <div class="logo">EcoApp <span>Pro</span> 🌿</div>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <div class="user-badge" id="user-badge">Alumno</div>
+        <button onclick="cerrarSesion()" style="background:#e74c3c; color:white; border:none; padding:6px 10px; border-radius:12px; font-size:11px; cursor:pointer; font-weight:bold;">Salir</button>
+      </div>
+    </header>
+
+    <!-- Barra de Stories Interactivas -->
+    <div class="stories-bar">
+      <div class="story-item" onclick="mostrarSeccion('informe')">
+        <div class="story-ring active-ring"><div class="story-avatar">📚</div></div>
+        <span>Informe V3</span>
+      </div>
+      <div class="story-item" onclick="mostrarSeccion('calc')">
+        <div class="story-ring"><div class="story-avatar">🧮</div></div>
+        <span>Calculadora</span>
+      </div>
+      <div class="story-item" onclick="mostrarSeccion('quiz')">
+        <div class="story-ring"><div class="story-avatar">📝</div></div>
+        <span>Examen</span>
+      </div>
+      <div class="story-item" onclick="abrirModalInfo()">
+        <div class="story-ring"><div class="story-avatar">💡</div></div>
+        <span>Créditos</span>
+      </div>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main class="app-content">
+      
+      <!-- TAB 1: Informe Extenso Formato APA -->
+      <section id="tab-informe" class="tab-content active">
+        <article class="apa-report">
+          <div class="badge-tag">REPORTE DE INVESTIGACIÓN APA (EDICIÓN 7)</div>
+          <h1>Integración Sistémica de la Separación de Residuos Sólidos Urbanos y Energías Limpias (Solar y Eólica) en el Marco de la Economía Circular</h1>
+          
+          <div class="apa-meta">
+            <p><strong>Autores:</strong> Mauricio Montalvo Carranza y Asociados: Cerezo Hernández Miguel Iván, Paola Rojas Gonzáles, Diego Fuentes Gálvez</p>
+            <p><strong>Materia:</strong> Ciencias, Tecnología y Sustentabilidad</p>
+            <p><strong>Estatus:</strong> Documentación Oficial Completa</p>
+          </div>
+
+          <!-- Índice Rápido -->
+          <div class="quick-index">
+            <p><strong>🔍 Contenido del Documento:</strong></p>
+            <ul>
+              <li><a href="#sec-resumen">1. Resumen Ejecutivo</a></li>
+              <li><a href="#sec-intro">2. Introducción y Problemática Global</a></li>
+              <li><a href="#sec-rsu">3. Clasificación y Caracterización de RSU</a></li>
+              <li><a href="#sec-renovables">4. Fundamentos Tecnológicos: Solar y Eólica</a></li>
+              <li><a href="#sec-sinergia">5. Sinergia Operativa y Micropartículas</a></li>
+              <li><a href="#sec-circular">6. Modelo de Economía Circular y ACV</a></li>
+              <li><a href="#sec-conclusiones">7. Conclusiones y Recomendaciones</a></li>
+              <li><a href="#sec-ref">8. Referencias Bibliográficas</a></li>
+            </ul>
+          </div>
+
+          <!-- Sección 1 -->
+          <div id="sec-resumen" class="report-section">
+            <h2>1. Resumen Ejecutivo</h2>
+            <p>La acelerada urbanización e industrialización global ha generado una crisis dual: la acumulación desmedida de Residuos Sólidos Urbanos (RSU) y el incremento desproporcionado de la demanda energética dependiente de fósiles. Esta investigación analiza cómo la segregación eficiente en origen de la materia orgánica e inorgánica actúa como catalizador directo para optimizar los sistemas de generación eléctrica limpia (fotovoltaica y eólica). Se demuestra que el control de partículas derivadas de basureros a cielo abierto previene la degradación por <em>soiling</em> en paneles solares y corrobora la viabilidad de alimentar plantas de selección de materiales con energía 100% renovable.</p>
+          </div>
+
+          <!-- Sección 2 -->
+          <div id="sec-intro" class="report-section">
+            <h2>2. Introducción y Problemática Global</h2>
+            <p>A nivel mundial, se generan más de 2,010 millones de toneladas de RSU anualmente. La falta de infraestructura de separación causa que hasta un 33% de estos residuos no sean gestionados de forma ambientalmente segura. Al depositarse en tiraderos sin control, la fracción orgánica sufre degradación anaeróbica produciendo gas metano (CH₄), cuyo potencial de calentamiento global es 28 veces superior al dióxido de carbono (CO₂).</p>
+            <p>Paralelamente, la transición energética exige la adopción masiva de la energía eólica y solar fotovoltaica. Sin embargo, ambas tecnologías enfrentan desafíos de eficiencia cuando se exponen a entornos con alta contaminación ambiental y partículas en suspensión generadas por incendios de basura y malos manejos de residuos.</p>
+          </div>
+
+          <!-- Sección 3 -->
+          <div id="sec-rsu" class="report-section">
+            <h2>3. Clasificación Integral de RSU</h2>
+            <p>Seleccione cada categoría para desplegar las especificaciones técnicas de tratamiento:</p>
+
+            <div class="accordion">
+              <button class="accordion-btn" onclick="toggleAccordion('acc-1')">
+                🌱 <strong>Orgánicos Biodegradables</strong> (43% del total)
+              </button>
+              <div id="acc-1" class="accordion-panel">
+                <p>Comprende restos de alimentos, podas, madera no tratada y residuos agrícolas. Su descomposición controlada en biodigestores produce <strong>Biogás</strong> (rico en metano para combustión limpia) y <strong>Digesto</strong> (fertilizante orgánico rico en nitrógeno y fósforo).</p>
+              </div>
+
+              <button class="accordion-btn" onclick="toggleAccordion('acc-2')">
+                ♻️ <strong>Inorgánicos Reciclables</strong> (38% del total)
+              </button>
+              <div id="acc-2" class="accordion-panel">
+                <p>Incluye polímeros como PET, PEAD, PEBD, aluminio, hojalata, cartón y vidrio. Al reinsertarse en la industria, se ahorra hasta un 95% de energía comparado con la extracción de materia prima virgen (ejemplo: reciclar una lata de aluminio ahorra suficiente energía para operar una TV durante 3 horas).</p>
+              </div>
+
+              <button class="accordion-btn" onclick="toggleAccordion('acc-3')">
+                🗑️ <strong>Inorgánicos No Reciclables / Sanitarios</strong> (19% del total)
+              </button>
+              <div id="acc-3" class="accordion-panel">
+                <p>Materiales con alta contaminación patógena (papel higiénico, pañales, toallas sanitarias) o empaques multicapa no separables. Requieren confinamiento en Relleno Sanitario bajo la norma NOM-083-SEMARNAT o procesos de termovalorización controlada.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sección 4 -->
+          <div id="sec-renovables" class="report-section">
+            <h2>4. Fundamentos Tecnológicos de Energías Limpias</h2>
+            <p>La energía solar fotovoltaica transforma los fotones de la radiación en electrones mediante celdas de silicio semiconductor. La energía eólica aprovecha la energía cinética de las masas de aire mediante palas aerodinámicas conectadas a un generador magnético.</p>
+
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tecnología</th>
+                    <th>Fuente primaria</th>
+                    <th>Eficiencia Promedio</th>
+                    <th>Impacto de la Basura / Contaminación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Solar Fotovoltaica</strong></td>
+                    <td>Radiación Solar (W/m²)</td>
+                    <td>18% - 23%</td>
+                    <td>El hollín y polvo por quema de RSU reducen hasta un 35% la generación por sombreado espectral (Soiling).</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Eólica</strong></td>
+                    <td>Viento (m/s)</td>
+                    <td>35% - 45%</td>
+                    <td>Residuos plásticos volátiles pueden enredarse o erosionar los bordes de ataque de las palas de las turbinas.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Sección 5 -->
+          <div id="sec-sinergia" class="report-section">
+            <h2>5. Sinergia Operativa: El Efecto "Soiling" y Reciclaje Energetizado</h2>
+            <p>Existe una correlación directa entre el mantenimiento ambiental y la cosecha de energía solar. El fenómeno conocido como <strong>Soiling</strong> ocurre cuando micropartículas suspendidas en el aire se adhieren al vidrio templado de los paneles. Si en una comunidad se queman RSU no separados, las emisiones de partículas PM2.5 y PM10 cubren la superficie reflectante, requiriendo lavados con agua potable constante y disminuyendo la producción total del parque solar.</p>
+            <p>Asimismo, la instalación de microrredes solares en Plantas de Selección y Separación de RSU permite que los molinos de trituración, bandas transportadoras y compactadoras funcionen con energía autoconsumida a costo operativo marginal cero.</p>
+          </div>
+
+          <!-- Sección 6 -->
+          <div id="sec-circular" class="report-section">
+            <h2>6. Modelo de Economía Circular y Análisis de Ciclo de Vida (ACV)</h2>
+            <p>El modelo tradicional lineal (Extraer ➔ Fabricar ➔ Desechar) ha colapsado las capacidades ecológicas del planeta. La Economía Circular propone cerrar el ciclo de vida de los materiales:</p>
+            <div class="infographic-box">
+              <p>🔄 <strong>Diseño Ecológico</strong> ➔ ⚡ <strong>Manufactura con Energía Solar/Eólica</strong> ➔ 📦 <strong>Consumo Responsable</strong> ➔ ♻️ <strong>Recuperación y Separación</strong> ➔ 🏭 <strong>Reincorporación Materia Prima</strong></p>
+            </div>
+          </div>
+
+          <!-- Sección 7 -->
+          <div id="sec-conclusiones" class="report-section">
+            <h2>7. Conclusiones y Recomendaciones</h2>
+            <p>1. La separación de residuos en origen es una condición sine qua non para el éxito operacional de las tecnologías renovables.</p>
+            <p>2. La integración de energías limpias en la cadena de reciclaje minimiza las emisiones netas de la industria manufacturera.</p>
+            <p>3. Se recomienda la implementación obligatoria de programas de educación ambiental en instituciones educativas para formalizar la cultura de las 3R (Reducir, Reutilizar, Reciclar).</p>
+          </div>
+
+          <!-- Sección 8 -->
+          <div id="sec-ref" class="report-section">
+            <h2>8. Referencias Bibliográficas (APA 7a Edición)</h2>
+            <p class="apa-ref">Agencia Internacional de Energías Renovables. (2023). <em>Renewable capacity statistics 2023</em>. IRENA Publications.</p>
+            <p class="apa-ref">Programa de las Naciones Unidas para el Medio Ambiente. (2022). <em>Global waste management outlook: Towards a circular economy</em>. PNUMA.</p>
+            <p class="apa-ref">Secretaría de Medio Ambiente y Recursos Naturales. (2021). <em>Diagnóstico básico para la gestión integral de los residuos</em>. Gobierno de México.</p>
+          </div>
+        </article>
+      </section>
+
+      <!-- TAB 2: Calculadora Interactiva de Impacto Eco -->
+      <section id="tab-calc" class="tab-content">
+        <div class="quiz-card">
+          <h2>🧮 Calculadora de Impacto Ambiental</h2>
+          <p class="quiz-subtitle">Calcula cuánto ahorro de CO₂ y energía aportas al separar tus residuos cada semana.</p>
+
+          <div class="input-group">
+            <label for="calc-pet">Botellas de PET a la semana (Piezas):</label>
+            <input type="number" id="calc-pet" min="0" value="10">
+          </div>
+
+          <div class="input-group">
+            <label for="calc-latas">Latas de Aluminio a la semana (Piezas):</label>
+            <input type="number" id="calc-latas" min="0" value="5">
+          </div>
+
+          <button type="button" class="btn-primary" onclick="calcularImpacto()">Calcular Ahorro Ecológico</button>
+
+          <div id="calc-results" class="status-box hidden" style="margin-top: 20px; text-align: left;">
+            <p>🌱 <strong>CO₂ Evitado:</strong> <span id="res-co2" style="color:#2ecc71; font-weight:bold;">0</span> kg/año</p>
+            <p>⚡ <strong>Energía Ahorrada:</strong> <span id="res-kwh" style="color:#f1c40f; font-weight:bold;">0</span> kWh</p>
+            <p>💡 <strong>Equivale a encender un foco LED por:</strong> <span id="res-foco" style="color:#3498db; font-weight:bold;">0</span> horas</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: Cuestionario de Evaluación -->
+      <section id="tab-quiz" class="tab-content">
+        <div id="quiz-container" class="quiz-card">
+          <h2>Cuestionario de Evaluación</h2>
+          <p class="quiz-subtitle">Responde las 10 preguntas. Registro directo en la nube (1 solo intento).</p>
+          
+          <form id="quiz-form">
+            
+            <div class="question-block">
+              <p class="q-title">1. ¿Cuál es el objetivo principal de separar los residuos orgánicos?</p>
+              <label><input type="radio" name="q1" value="A" required> A) Producir plásticos rígidos</label>
+              <label><input type="radio" name="q1" value="B"> B) Permitir su compostaje y producción de biogás</label>
+              <label><input type="radio" name="q1" value="C"> C) Evitar la radiación solar</label>
+            </div>
+
+            <div class="question-block">
+              <p class="q-title">2. ¿Qué material pertenece a la categoría de inorgánicos reciclables?</p>
+              <label><input type="radio" name="q2" value="A" required> A) Botellas de PET y latas de aluminio</label>
+              <label><input type="radio" name="q2" value="B"> B) Restos de comida cocinada</label>
+              <label><input type="radio" name="q2" value="C"> C) Pañales desechables usados</label>
+            </div>
+
+            <div class="question-block">
+              <p class="q-title">3. ¿Cómo afecta el fenómeno de "soiling" (polvo y hollín) a las celdas solares?</p>
+              <label><input type="radio" name="q3" value="A" required> A) Aumenta la producción eléctrica</label>
+              <label><input type="radio" name="q3" value="B"> B) Reduce la captura de radiación y la eficiencia</label>
+              <label><input type="radio" name="q3" value="C"> C) No genera ningún impacto operacional</label>
+            </div>
+
+            <div class="question-block">
+              <p class="q-title">4. La energía eólica aprovecha la energía cinética de:</p>
+              <label><input type="radio" name="q4" value="A" required> A) Las corrientes de agua subterráneas</label>
+              <label><input type="radio" name="q4" value="B"> B) Las masas de aire en movimiento (viento)</label>
+              <label><input type="radio" name="q4" value="C"> C) La combustión directa de plásticos</label>
+            </div>
+
+            <div class="question-block">
+              <p class="q-title">5. ¿Qué principio promueve el modelo de Economía Circular?</p>
+              <label><input type="radio" name="q5" value="A" required> A) Extraer, fabricar, usar y tirar rápidamente</label>
+              <label><input type="radio" name="q5" value="B"> B) Cerrar ciclos de vida y mantener recursos en uso el mayor tiempo posible</label>
+              <label><input type="radio" name="q5" value="C"> C) Prohibir el uso de tecnología fotovoltaica</label>
+            </div>
+
+            <div class="question-block">
+              <p class="q-title">6. ¿Qué gas de potente efecto invernadero desprenden los residuos orgánicos en basureros no controlados?</p>
+              <label><input type="radio" name="q6" value="A" required> A) Oxígeno medicinal</label>
+              <label><input type="radio" name="q6" value="B"> B) Metano (CH4)</label>
+              <label><input type="radio" name="q6" value="C"> C) Argón gaseoso</label>
+            </div>
+
+            <div class="question-block">
+              <p class="q-title">7. ¿Qué ventaja ofrece alimentar plantas de separación de RSU con paneles solares?</p>
+              <label><input type="radio" name="q7" value="A" required> A) Operar con bajas emisiones de carbono y costo energético neutro</label>
+              <label><input type="radio" name="q7" value="B"> B) Aumentar drásticamente la generación de basura</label>
+              <label><input type="radio" name="q7" value="C"> C) Eliminar la necesidad de clasificar materiales</label>
+            </div>
+
+            <div class="question-block">
+              <p class="q-title">8. Un ejemplo de residuo inorgánico no reciclable es:</p>
+              <label><input type="radio" name="q8" value="A" required> A) Papel periódico limpio y seco</label>
+              <label><input type="radio" name="q8" value="B"> B) Papel higiénico o material sanitario usado</label>
+              <label><input type="radio" name="q8" value="C"> C) Envase de cartón de leche seco</label>
+            </div>
+
+            <div class="question-block">
+              <p class="q-title">9. ¿En qué consiste el proceso de la tecnología fotovoltaica?</p>
+              <label><input type="radio" name="q9" value="A" required> A) Convierte fotones de la luz solar directamente en corriente eléctrica</label>
+              <label><input type="radio" name="q9" value="B"> B) Requiere incinerar materiales orgánicos a alta temperatura</label>
+              <label><input type="radio" name="q9" value="C"> C) Solo genera potencia durante lluvias intensas</label>
+            </div>
+
+            <div class="question-block">
+              <p class="q-title">10. ¿Cuál es el primer paso crítico en la gestión integral de residuos?</p>
+              <label><input type="radio" name="q10" value="A" required> A) Incineración no regulada</label>
+              <label><input type="radio" name="q10" value="B"> B) Segregación o separación desde la fuente (hogar/escuela)</label>
+              <label><input type="radio" name="q10" value="C"> C) Mezclar todos los residuos en un solo contenedor</label>
+            </div>
+
+            <button type="submit" class="btn-primary" id="btn-submit">Enviar Cuestionario</button>
+          </form>
+        </div>
+
+        <!-- Pantalla de Bloqueo / Respuestas Enviadas -->
+        <div id="quiz-completed" class="quiz-card hidden">
+          <div class="completed-icon">✅</div>
+          <h2>Cuestionario Finalizado</h2>
+          <p id="score-text">Ya has completado tu evaluación.</p>
+          <div class="status-box">
+            <p><strong>Estado:</strong> Respuestas registradas en Firestore Cloud.</p>
+            <p class="warning-text">⚠️ No se permiten reintentos adicionales.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pie de página formal con Derechos Reservados -->
+      <footer class="app-footer">
+        <p>© 2026 <strong>EcoApp Pro</strong>. Todos los derechos reservados.</p>
+        <p class="credits-authors">
+          <strong>Desarrollado e Investigado por:</strong><br>
+          Mauricio Montalvo Carranza y Asociados:<br>
+          Cerezo Hernández Miguel Iván • Paola Rojas Gonzáles • Diego Fuentes Gálvez
+        </p>
+      </footer>
+
+    </main>
+
+    <!-- Navegación Inferior Estilo App -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" onclick="mostrarSeccion('informe')" id="nav-informe">
+        <span class="icon">📚</span>
+        <span class="label">Informe</span>
+      </button>
+      <button class="nav-btn" onclick="mostrarSeccion('calc')" id="nav-calc">
+        <span class="icon">🧮</span>
+        <span class="label">Calculadora</span>
+      </button>
+      <button class="nav-btn" onclick="mostrarSeccion('quiz')" id="nav-quiz">
+        <span class="icon">📝</span>
+        <span class="label">Examen</span>
+      </button>
+    </nav>
+  </div>
+
+  <script type="module" src="scripts.js"></script>
+</body>
+</html>
